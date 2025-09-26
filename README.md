@@ -1,3 +1,6 @@
+# KAMALESH S
+# 212223060108
+# Date : 26-09-2025
 # Automatic-Motion-Activated-Security-using-PIR-Sensor
 ## AIM:
              To detect motion using a PIR sensor connected to an Arduino and trigger an LED (using the built-in LED) when motion is sensed.
@@ -58,12 +61,62 @@ Step 7: Save Your Work
 1.	Stop Simulation: Click the “Stop Simulation” button once testing is complete.
 2.	Save the Circuit: Click “Save” at the top of the screen to store your design and code for future use.
 
+# Schematic view:
+<img width="985" height="762" alt="image" src="https://github.com/user-attachments/assets/998a7455-2247-4e03-b792-423308f26eab" />
+# Circuit Diagram:
+<img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/c7f7326c-b0a8-4bc3-aafc-056b99ff8c85" />
+
 
 # Code:
+```tinkercad
+#include <LiquidCrystal.h>
 
+// Initialize LCD (RS, E, D4, D5, D6, D7)
+LiquidCrystal lcd(7, 6, 5, 4, 3, 2);
 
+int pirPin = 8;   // PIR sensor output pin
+int ledPin = 9;   // LED pin
+int pirState = LOW;
+int val = 0;
+
+void setup() {
+  pinMode(pirPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+
+  lcd.begin(16, 2);
+  lcd.print("Motion Detector");
+  delay(2000);
+  lcd.clear();
+}
+
+void loop() {
+  val = digitalRead(pirPin);
+
+  if (val == HIGH) {
+    digitalWrite(ledPin, HIGH);
+    if (pirState == LOW) {
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("Motion Detected");
+      pirState = HIGH;
+    }
+  } else {
+    digitalWrite(ledPin, LOW);
+    if (pirState == HIGH) {
+      lcd.clear();
+      lcd.setCursor(0, 0);
+      lcd.print("No Motion");
+      pirState = LOW;
+    }
+  }
+}
+```
 
 # Output:
+
+
+https://github.com/user-attachments/assets/eb322e01-25a1-4788-9a6a-a15084ff4294
+
 
 
 
