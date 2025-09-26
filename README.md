@@ -64,7 +64,7 @@ Step 7: Save Your Work
 # Schematic view:
 <img width="985" height="762" alt="image" src="https://github.com/user-attachments/assets/998a7455-2247-4e03-b792-423308f26eab" />
 # Circuit Diagram:
-<img width="1919" height="969" alt="image" src="https://github.com/user-attachments/assets/c7f7326c-b0a8-4bc3-aafc-056b99ff8c85" />
+<img width="1919" height="973" alt="image" src="https://github.com/user-attachments/assets/33da2af8-8eec-4f49-8c2f-addd8a91a606" />
 
 
 # Code:
